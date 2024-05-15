@@ -4,7 +4,7 @@
 using namespace std;
 
 
-int* Prostch(int* ms[], int size) {
+int* Prostch(int ms[], int size) {
 
 	int* nAr1 = new int[size];
 
@@ -14,13 +14,13 @@ int* Prostch(int* ms[], int size) {
 
 		for (int j = 1; j <= i; j++) {
 
-			if (*ms[i] % j == 0) { count1 += 1; }
+			if (ms[i] % j == 0) { count1 += 1; }
 
 		}
 		
 		if (count1 <= 2) {
 
-			nAr1[i] = *ms[i];
+			nAr1[i] = ms[i];
 
 			count2 += 1;
 		}
@@ -41,7 +41,7 @@ int* Prostch(int* ms[], int size) {
 
 }
 
-int* Parni(int* ms[], int size) {
+int* Parni(int ms[], int size) {
 
 	int* nAr1 = new int[size];
 
@@ -49,10 +49,10 @@ int* Parni(int* ms[], int size) {
 
 	for (int i = 0; i < size; i++) {
 
-		if (*ms[i] % 2 == 0) {
+		if (ms[i] % 2 == 0) {
 
 			count2 += 1;
-			nAr1[i] = *ms[i];
+			nAr1[i] = ms[i];
 
 		}
 
@@ -73,7 +73,7 @@ int* Parni(int* ms[], int size) {
 }
 
 
-int* Krattri(int* ms[], int size) {
+int* Krattri(int ms[], int size) {
 
 	int* nAr1 = new int[size];
 
@@ -81,10 +81,10 @@ int* Krattri(int* ms[], int size) {
 
 	for (int i = 0; i < size; i++) {
 
-		if (*ms[i] % 3 == 0) {
+		if (ms[i] % 3 == 0) {
 
 			count2 += 1;
-			nAr1[i] = *ms[i];
+			nAr1[i] = ms[i];
 
 		}
 
@@ -104,13 +104,49 @@ int* Krattri(int* ms[], int size) {
 
 }
 
-void InitAr(int* ms[], int size) {
+void InitAr(int ms[], int size) {
 
 	for (int i = 0; i < size; i++) {
 
-		*ms[i] = rand() % 100;
+		ms[i] = rand() % 100;
 
 	}
 
 }
 
+int main() {
+
+	srand(time(0));
+
+	const int size = 10;
+
+	int ans;
+
+	int* Array = new int[size];
+
+	InitAr(Array, size);
+
+	cout << "What you wanna know?\n";
+	cout << "1. Simple numers in array.\n";
+	cout << "2. Numbers that multiples by 3.\n";
+	cout << "3. Numbers that can be divided by 2.\n";
+
+	cout << "Your answer: ";
+
+	cin >> ans;
+
+	switch (ans) {
+
+	case 1:Prostch(Array, size); break;
+
+	case 2:Krattri(Array, size); break;
+
+	case 3:Parni(Array, size); break;
+
+	default:cout << "incorect choice.." << endl; break;
+
+	}
+
+	return 0;
+
+}
