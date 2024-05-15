@@ -71,3 +71,37 @@ int* Parni(int* ms[], int size) {
 	return nAr2;
 
 }
+
+
+int* Krattri(int* ms[], int size) {
+
+	int* nAr1 = new int[size];
+
+	int count1 = 0, count2 = 0;
+
+	for (int i = 0; i < size; i++) {
+
+		if (*ms[i] % 3 == 0) {
+
+			count2 += 1;
+			nAr1[i] = *ms[i];
+
+		}
+
+	}
+
+	int* nAr2 = new int[count2];
+
+	for (int i = 0; i < count2; i++) {
+
+		nAr2[i] = nAr1[i];
+
+	}
+
+	delete[] nAr1;
+
+	return nAr2;
+
+}
+
+
