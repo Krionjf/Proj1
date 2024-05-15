@@ -33,7 +33,11 @@ int* Prostch(int ms[], int size) {
 
 		nAr2[i] = nAr1[i];
 
+		cout << nAr2[i] << ' ';
+
 	}
+
+	cout << endl;
 
 	delete[] nAr1;
 
@@ -60,13 +64,20 @@ int* Parni(int ms[], int size) {
 
 	int* nAr2 = new int[count2];
 
+	cout << endl;
+
 	for (int i = 0; i < count2; i++) {
 
 		nAr2[i] = nAr1[i];
+		
+		cout << nAr2[i] << ' ';
 
 	}
 
+	cout << endl;
+
 	delete[] nAr1;
+
 
 	return nAr2;
 
@@ -96,7 +107,11 @@ int* Krattri(int ms[], int size) {
 
 		nAr2[i] = nAr1[i];
 
+		cout << nAr2[i] << ' ';
+
 	}
+
+	cout << endl;
 
 	delete[] nAr1;
 
