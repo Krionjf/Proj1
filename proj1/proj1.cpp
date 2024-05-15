@@ -37,7 +37,7 @@ int* Prostch(int ms[], int size) {
 
 	delete[] nAr1;
 
-	return nAr2;
+	return  nAr2;
 
 }
 
@@ -139,6 +139,8 @@ int main() {
 	int* Array = new int[size];
 
 	InitAr(Array, size);
+
+	PrintAr(Array, size);
 
 	cout << "What you wanna know?\n";
 	cout << "1. Simple numers in array.\n";
