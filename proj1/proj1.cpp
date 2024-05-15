@@ -114,6 +114,20 @@ void InitAr(int ms[], int size) {
 
 }
 
+void PrintAr(int ms[], int size) {
+
+	cout << "Array: ";
+
+	for (int i = 0; i < size; i++) {
+
+		cout << ms[i] << ' ';
+
+	}
+
+	cout << endl << endl;
+
+}
+
 int main() {
 
 	srand(time(0));
